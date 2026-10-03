@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Muzaffar Hosting</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">M</span><span>Muzaffar Hosting</span></div>
+  <button class="outline" id="loginBtn">Admin Login</button>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <span class="pill">STATIC HOSTING DASHBOARD</span>
+      <h1>Host your website<br><span>without Termux.</span></h1>
+      <p>Upload an HTML website, preview it, manage your hosted projects and copy a share link.</p>
+      <div class="actions">
+        <button class="primary" id="uploadBtn">＋ Upload Website</button>
+        <button class="outline" id="demoBtn">View Demo</button>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="status"><i></i> Hosting dashboard</div>
+      <div class="big">Fast & simple</div>
+      <div class="muted">GitHub Pages ready frontend</div>
+      <div class="mini-grid"><div><b>0</b><small>Sites</small></div><div><b>HTML</b><small>Upload</small></div><div><b>24/7</b><small>Dashboard</small></div></div>
+    </div>
+  </section>
+
+  <section class="dashboard">
+    <div class="card upload">
+      <div class="card-head"><div><h2>Website Hosting</h2><p>Select an <b>index.html</b> file to preview it.</p></div><span class="icon">↑</span></div>
+      <label class="drop" id="drop">
+        <input id="file" type="file" accept=".html,.htm,text/html">
+        <span class="cloud">↑</span><b>Choose website file</b><small>HTML only in this GitHub Pages version</small>
+      </label>
+      <div id="selected" class="selected">No file selected</div>
+      <div class="actions">
+        <button class="primary" id="previewBtn" disabled>Preview</button>
+        <button class="outline" id="hostBtn" disabled>Create Hosting Record</button>
+      </div>
+      <div id="result"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div><h2>Hosting Stats</h2><p>Your browser demo data</p></div></div>
+      <div class="stats"><div><b id="siteCount">0</b><small>Hosted sites</small></div><div><b id="storage">0 KB</b><small>Stored locally</small></div><div><b>Public</b><small>GitHub frontend</small></div></div>
+      <div class="notice"><b>How real hosting works</b><p>GitHub Pages hosts this dashboard. To let users upload files and receive public site URLs, add a server-side storage/deployment backend.</p></div>
+    </div>
+  </section>
+
+  <section class="card projects">
+    <div class="card-head"><div><h2>Hosted Projects</h2><p>Projects created in this browser</p></div></div>
+    <div id="projects"><div class="empty">No projects yet.</div></div>
+  </section>
+</main>
+
+<div class="modal" id="modal"><div class="modal-box"><div class="modal-head"><b id="modalTitle">Preview</b><button class="outline" id="close">Close</button></div><iframe id="frame" sandbox="allow-scripts"></iframe></div></div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
